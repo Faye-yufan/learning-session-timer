@@ -1,7 +1,7 @@
 body {
     height: 400px;
     width: 300px;
-    background-color: rgba(249, 205, 173, .3); 
+    background-color: rgba(249, 205, 173, .3);
 }
 
 .header {
@@ -22,7 +22,7 @@ body {
     justify-content: space-evenly;
 }
 
-#btn-container > button {
+#btn-container>button {
     color: rgb(254, 67, 101);
     background-color: whitesmoke;
     border: none;

@@ -59,12 +59,13 @@ function renderTask(taskNum) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.className = "task-checkbox";
-    checkbox.addEventListener("checked", () => {
-        strikethroughTasks();
+    checkbox.addEventListener("change", e => {
+        strikethroughTasks(e.target.checked, taskNum);
     })
 
     const text = document.createElement("input");
     text.type = "text";
+    text.id = "task-input-" + taskNum;
     text.className = "task-input";
     text.placeholder = "Enter a task...";
     text.value = tasks[taskNum];
@@ -100,6 +101,18 @@ function deleteTask(taskNum) {
     tasks.splice(taskNum, 1);
     renderTasks();
     saveTasks();
+}
+
+function strikethroughTasks(isChecked, taskNum) {
+    const targetId = "task-input-" + taskNum;
+    const input = document.getElementById(targetId);
+    // text-decoration: line-through
+    if (isChecked) {
+        document.getElementById(targetId).style.textDecoration = "line-through";
+    } else {
+        document.getElementById(targetId).style.textDecoration = "none";
+    }
+    
 }
 
 function renderTasks() {
