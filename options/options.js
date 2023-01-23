@@ -2,7 +2,7 @@ const timeOption = document.getElementById("time-options");
 timeOption.addEventListener("change", (event) => {
     const val = event.target.value;
     if (val < 1 || val > 120){
-        timeOption.value = 25;
+        timeOption.value = 90;
     }
 })
 

@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Pomodoro Timer",
+    "name": "Learning Session Timer",
     "version": "1.0.0",
-    "description": "A timer helps you focus and get things done.",
+    "description": "A timer helps you maintain intense focus and effort toward learning.",
     "icons":{
         "16": "icon.png",
         "48": "icon.png",
@@ -10,7 +10,7 @@
     },
     "action": {
         "default_icon": "icon.png",
-        "default_title": "Pomodoro Timer",
+        "default_title": "Learning Session Timer",
         "default_popup": "popup/popup.html"
     },
     "permissions":["storage", "alarms", "notifications"],
