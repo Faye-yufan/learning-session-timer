@@ -1,9 +1,65 @@
 body {
     height: 400px;
     width: 300px;
+    background-color: rgba(249, 205, 173, .3); 
 }
 
 .header {
     display: flex;
     justify-content: center;
+}
+
+#time-panel {
+    text-align: center;
+    font-size: 50px;
+    margin: 10px;
+    font-weight: bold;
+    color: rgb(131, 175, 155);
+}
+
+#btn-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#btn-container > button {
+    color: rgb(254, 67, 101);
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+    width: 50px;
+    cursor: pointer;
+}
+
+#task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.task-input {
+    background-color: whitesmoke;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+    width: 180px;
+}
+
+.task-delete {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    color: rgb(254, 67, 101);
+    cursor: pointer;
+    font-weight: 700;
 }

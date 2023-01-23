@@ -19,7 +19,7 @@ startTimeBtn.addEventListener("click", () => {
         chrome.storage.local.set({
             isRunning: !res.isRunning,
         }, () => {
-            startTimeBtn.textContent = res.isRunning ? "Start Timer" : "Pause Timer";
+            startTimeBtn.innerHTML = res.isRunning ? '<img src="../assets/play-start-icon.svg" alt="Start Timer">' : '<img src="../assets/play-stop-icon.svg" alt="Start Timer">';
         })
     })
 })
@@ -30,7 +30,7 @@ resetTimerBtn.addEventListener("click", () => {
         timer: 0,
         isRunning: false,
     }, () => {
-        startTimeBtn.textContent = "Start Timer"
+        startTimeBtn.innerHTML = '<img src="../assets/play-start-icon.svg" alt="Start Timer">';
     })
 })
 
@@ -56,8 +56,16 @@ function saveTasks() {
 function renderTask(taskNum) {
     const taskRow = document.createElement("div");
 
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "task-checkbox";
+    checkbox.addEventListener("checked", () => {
+        strikethroughTasks();
+    })
+
     const text = document.createElement("input");
     text.type = "text";
+    text.className = "task-input";
     text.placeholder = "Enter a task...";
     text.value = tasks[taskNum];
     text.addEventListener("change", () => {
@@ -67,11 +75,13 @@ function renderTask(taskNum) {
 
     const deleteBtn = document.createElement("input");
     deleteBtn.type = "button";
+    deleteBtn.className = "task-delete";
     deleteBtn.value = "X";
     deleteBtn.addEventListener("click", () => {
         deleteTask(taskNum);
     })
 
+    taskRow.appendChild(checkbox);
     taskRow.appendChild(text);
     taskRow.appendChild(deleteBtn);
 
