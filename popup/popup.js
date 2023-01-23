@@ -108,9 +108,12 @@ function strikethroughTasks(isChecked, taskNum) {
     const input = document.getElementById(targetId);
     // text-decoration: line-through
     if (isChecked) {
-        document.getElementById(targetId).style.textDecoration = "line-through";
+        input.style.textDecoration = "line-through 5px";
+        input.style.textDecorationColor = "rgba(83, 141, 114, .3)";
+        input.style.backgroundColor = "rgba(249, 205, 173, .2)";
     } else {
-        document.getElementById(targetId).style.textDecoration = "none";
+        input.style.textDecoration = "none";
+        input.style.backgroundColor = "whitesmoke";
     }
     
 }
