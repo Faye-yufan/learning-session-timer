@@ -1,6 +1,39 @@
 
 let tasks = [""];
 
+function updateTime() {
+    chrome.storage.local.get(["timer"], (res) => {
+        const time = document.getElementById("time-panel");
+        const minutes = `${25 - Math.ceil(res.timer / 60)}`.padStart(2, "0");
+        let seconds = 60 - res.timer % 60 == 60 ? "00": `${60 - res.timer % 60}`.padStart(2, "0");
+        time.textContent = minutes + ":" + seconds;
+    })
+}
+
+// updateTime();
+setInterval(updateTime, 1000);
+
+const startTimeBtn = document.getElementById("start-timer-btn");
+startTimeBtn.addEventListener("click", () => {
+    chrome.storage.local.get(["isRunning"], (res) => {
+        chrome.storage.local.set({
+            isRunning: !res.isRunning,
+        }, () => {
+            startTimeBtn.textContent = res.isRunning ? "Start Timer" : "Pause Timer";
+        })
+    })
+})
+
+const resetTimerBtn = document.getElementById("reset-timer-btn");
+resetTimerBtn.addEventListener("click", () => {
+    chrome.storage.local.set({
+        timer: 0,
+        isRunning: false,
+    }, () => {
+        startTimeBtn.textContent = "Start Timer"
+    })
+})
+
 const firstTask = document.getElementById("init-task-input");
 firstTask.addEventListener("change", () => {
     tasks[0] = firstTask.value;
