@@ -1,0 +1,37 @@
+body {
+    background-color: rgba(249, 205, 173, .3);
+    text-align: center;
+}
+
+h1 {
+    color: rgba(254, 67, 101, .6);
+    font-size: 50px;
+    margin: 10px;
+    font-weight: normal;
+}
+
+h2 {
+    font-weight: bold;
+    color: rgb(131, 175, 155);
+}
+
+#time-options {
+    outline: none;
+    border: none;
+    width: 300px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#save-btn {
+    display: block;
+    margin: 20px auto;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgb(254, 67, 101);
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+}
